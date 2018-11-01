@@ -85,7 +85,7 @@ except KeyError:
 # дл€ получени€ случайного числа используйте функцию randint() модул€ random
 
 import random
- try:
+try:
     n = int(input("¬ведите желаемое количество элементов списка: "))
     lst = [random.randint(-100, 100) for x in range(0, n)]
     print(f"—генерированный список: {lst}")
@@ -98,3 +98,14 @@ except ValueError:
 # например, lst = [1, 2, 4, 5, 6, 2, 5, 2], нужно получить lst2 = [1, 2, 4, 5, 6]
 # б) элементы исходного списка, которые не имеют повторений:
 # например, lst = [1 , 2, 4, 5, 6, 2, 5, 2], нужно получить lst2 = [1, 4, 6]
+
+try:
+    num_lst = input("¬ведите список целых чисел, р€здел€€ элементы зап€тыми или пробелами: ")
+    num_lst = list(map(int, num_lst.replace(',', ' ').split()))
+    print(f"»сходный список: {num_lst}")
+    lst_a = list(set(num_lst))
+    print(f"а) неповтор€ющиес€ элементы исходного списка: {lst_a}")
+    lst_b = [x for x in num_lst if num_lst.count(x) == 1]
+    print(f"б) элементы исходного списка, которые не имеют повторений: {lst_b}")
+except ValueError:
+    print("¬ы ввели неверные данные")
