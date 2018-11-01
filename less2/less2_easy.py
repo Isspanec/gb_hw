@@ -13,6 +13,15 @@
 
 # Подсказка: воспользоваться методом .format()
 
+fruits = ["яблоко", "банан", "киви", "арбуз"]
+length_max = 0
+for i in fruits:
+    if len(i) > length_max:
+        length_max = len(i)
+format_pattern = '{' + f':>{length_max}' + '}'
+for i in fruits:
+    pre_result = ('{}. {}'.format(fruits.index(i) + 1, format_pattern))
+    print(pre_result.format(i))
 
 # Задача-2:
 # Даны два произвольные списка.
